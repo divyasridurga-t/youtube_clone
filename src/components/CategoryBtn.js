@@ -3,7 +3,7 @@ const CategoryButtons = ({ data }) => {
 
     return (
         <>
-            <div className="p-2 flex flex-wrap justify-evenly mb-2">
+            <div className="p-2 flex whitespace-nowrap mb-2 w-[80%] overflow-x-scroll gap-3 custom-scrollbar">
                 {
                     data?.data?.map((item, index) => {
                         return (
@@ -13,7 +13,6 @@ const CategoryButtons = ({ data }) => {
                         )
                     })
                 }
-
             </div>
         </>
     )
