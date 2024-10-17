@@ -3,6 +3,7 @@ import { jwtDecode } from "jwt-decode";
 import { useEffect, useState } from "react";
 import MenuData from "../utils/menuData";
 import HamburgerMenu from "./HamburgerMenu";
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
@@ -51,7 +52,7 @@ const Header = () => {
                         <HamburgerMenu MenuData={MenuData} />
                         : ''}
 
-                    <img className="ml-8" src="https://i.ibb.co/SdZShjX/youtube.png" width={40} height={40} />
+                    <Link to={'/'}><img className="ml-8" src="https://i.ibb.co/SdZShjX/youtube.png" width={40} height={40} /></Link>
                 </div>
                 <div className="flex">
                     <input className="w-[100%] h-10 border border-gray-400 rounded-l-lg p-1" type="text" placeholder="search.." />

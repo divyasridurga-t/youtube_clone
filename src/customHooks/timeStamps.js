@@ -1,6 +1,4 @@
 export default function timeStamp(state) {
-    console.log(state);
-    
     if (!state) {
       return '';
     }

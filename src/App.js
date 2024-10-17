@@ -1,15 +1,29 @@
 import './App.css';
-import Header from './components/header';
-import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import HomePage from './components/HomePage';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import WatchPage from './components/watchPage';
+import Layout from './components/Layout';
 
 function App() {
+  let routes = createBrowserRouter([{
+    path: '/',
+    element: <Layout />,
+    children: [
+      {
+        path: '/',
+        element: <HomePage />,
+      },
+      {
+        path: '/watch',
+        element: <WatchPage />
+
+      }
+    ]
+  }])
   return (
-    <>
-      <GoogleOAuthProvider clientId='92522573922-ivhbbqquto38lrji7eqtum1jjstdee2k.apps.googleusercontent.com'>
-        <HomePage />
-      </GoogleOAuthProvider>
-    </>
+    <div>
+      <RouterProvider router={routes} />
+    </div>
   );
 }
 
